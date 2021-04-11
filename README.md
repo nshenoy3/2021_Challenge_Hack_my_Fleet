@@ -25,6 +25,11 @@ pip install bokeh
 Since the dataset files are huge, we could not include them in out github project.
 Create a Dataset folder in the project directory and copy the dataset files to this directory.
 
+To run application - 
+In command line type : 
+```commandline
+python main.py
+```
 ## Project Implementation Idea : 
 1. **Asset Tracking :** This feature aims to show the path traveled by each assetId over the course of a year. For this we have used Google Maps and Bokeh geomaps to view the position of each assetId on a particular day. A future development of this could include a geofencing application and alerting for a particular assetId if it goes out of its confined area.
 2. **Fuel Refill Prediction** : This feature analyses the past data and calculates the refill dates of each assetId based on the fuel level percentage. Further it predicts the future refill dates based on the past trend and usage. 
@@ -35,6 +40,19 @@ Create a Dataset folder in the project directory and copy the dataset files to t
 **asset.py** : Implements the Best performing asset Idea. Produces templates/asset.html<br>
 **Fuel.py** : Implements the Fuel Refill Prediction. Produces templates/Fuel.html <br>
 
-## Usage
-
 ## Screenshots
+
+**Best Assets :** 
+![plot](./Screenshots/BestAsset.jpeg)
+
+**Asset Tracking :**
+
+
+**Fuel History :**
+<br>
+This is a fuel history dates chart for Excavator Asset Type, ID : 1022017
+![plot](./Screenshots/FuelHistory.png)
+
+
+
+

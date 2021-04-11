@@ -1,12 +1,13 @@
 import pandas as pd
 import datetime
-from bokeh.plotting import figure, show
+from bokeh.plotting import figure, show, output_file
 from bokeh.models import DatetimeTickFormatter
 from math import pi
 import statistics
 
 
 def getFuelInsights (dataset):
+    print("Loading fuel insights")
     groupedDict = dataset.groupby(['Asset type', 'AssetID']).apply(lambda x: dict(zip(x['Date'], x['Fuel Level (%)']))).to_dict()
     fuelData = {}
     for key in groupedDict.keys():
@@ -27,11 +28,11 @@ def getFuelInsights (dataset):
                 lastDate = date
             tmp = value[date]
         fuelData[str(key[0])+"_"+str(key[1])] = refilDates
+    print("Loaded Fuel Insights")
     return fuelData
 
 
 def showFuelInsightsFor(fuelData, asssetId = "1022017", assetType = "Excavator"):
-    output_file("./templates/Fuel.html")
     p = figure(title="Fuel Refill Dates vs days it worked before refill", x_axis_label='Refill Date',
                y_axis_label='No of Days', plot_width=1000)
     x = list(fuelData[assetType + "_" + asssetId].keys())
@@ -44,12 +45,13 @@ def showFuelInsightsFor(fuelData, asssetId = "1022017", assetType = "Excavator")
             years=["%d %B %Y"],
         )
     p.xaxis.major_label_orientation = pi/4
-    lastDate = datetime.datetime.strptime(x[-1], "%m/%d/%y")
-    # A naive approach to choose the next prediction date.
-    # We can use Machine learning time series prediction (ARIMA Approach) to predict the next few dates for refill.
-    delta = statistics.mode(y)
-    nextPredictedDate = lastDate + datetime.timedelta(days=delta)
-    print("Next Refill Date : " + nextPredictedDate)
+    # lastDate = x[-1]
+    # # A naive approach to choose the next prediction date.
+    # # We can use Machine learning time series prediction (ARIMA Approach) to predict the next few dates for refill.
+    # delta = statistics.mode(y)
+    # nextPredictedDate = lastDate + datetime.timedelta(days=delta)
+    # print("Next Refill Date : " + nextPredictedDate)
+    output_file("./templates/Fuel.html")
     show(p)
 
 
