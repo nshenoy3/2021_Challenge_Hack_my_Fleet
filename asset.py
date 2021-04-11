@@ -8,11 +8,6 @@ from bokeh.layouts import widgetbox
 from bokeh.transform import factor_cmap
 from bokeh.layouts import column
 
-# df=pd.read_csv('./Dataset/hack_illinois_part1.csv')
-# df1=pd.read_csv('./Dataset/hack_illinois_part2.csv')
-#
-#
-# dfmerged=pd.concat([df, df1], ignore_index=True)
 def showBestAsset(dfmerged):
     dfsort = (dfmerged.groupby(['AssetID', 'Asset type']).mean().reset_index())
     dfsort['Efficiency (liters per hour)'] = dfsort.apply(lambda x: x['Total Fuel (Liters)'] / x['Total Hours'], axis=1)

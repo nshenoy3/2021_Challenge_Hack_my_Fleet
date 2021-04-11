@@ -7,7 +7,7 @@ import pandas as pd
 
 # LOAD THE DATA
 # coordinates = data[['GPS Lattitude', 'GPS Longitude']]
-def showAssetTracking(dataset):
+def showAssetTracking(data):
     psource = ColumnDataSource(data)
     # print(psource)
 
