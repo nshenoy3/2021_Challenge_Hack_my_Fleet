@@ -66,5 +66,5 @@ def showAssetTracking(data):
     # show the results
     layout = column(select, p)
     show(layout)
-    bokeh_doc.title = "Fleet Management System"
-    bokeh_doc.add_root(layout)
+    # bokeh_doc.title = "Fleet Management System"
+    # bokeh_doc.add_root(layout)
