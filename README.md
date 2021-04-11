@@ -50,6 +50,7 @@ bokeh serve --show maps.py
 **Best Assets :** 
 ![plot](./Screenshots/BestAsset.jpeg)
 
+
 **Asset Tracking :**
 This shows the path traveled by assetID : 1022011 of asset Type : Motor Grader.
 ![plot](./Screenshots/assetTracking.jpeg)
