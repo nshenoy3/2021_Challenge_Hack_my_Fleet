@@ -4,6 +4,8 @@ from bokeh.plotting import figure, show, output_file
 from bokeh.models import DatetimeTickFormatter
 from math import pi
 import statistics
+from bokeh.models.widgets import Div
+from bokeh.layouts import column
 
 
 def getFuelInsights (dataset):
@@ -52,6 +54,14 @@ def showFuelInsightsFor(fuelData, asssetId = "1022017", assetType = "Excavator")
     # nextPredictedDate = lastDate + datetime.timedelta(days=delta)
     # print("Next Refill Date : " + nextPredictedDate)
     output_file("./templates/Fuel.html")
-    show(p)
+
+    div_exp00 = Div(
+        text=""" <b>FUEL REFILL HISTORY GRAPH</b>
+                    """,
+        width=300, style={'font-size': '100%'})
+    div_exp01 = Div(
+        text=""" This graph analyses the history of fuel refills that happened for each asset ID. Predicting the next refill date can help us figure out when a particular asset needs fuel and can help us set alerts.""",
+        width=300)
+    show(column(div_exp00, div_exp01, p))
 
 

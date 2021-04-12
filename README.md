@@ -29,9 +29,14 @@ To run application -
 In command line type : 
 ```commandline
 python main.py
+
+```
+For asset Tracking, we can also run the map using : 
+```commandline
+bokeh serve --show maps.py
 ```
 ## Project Implementation Idea : 
-1. **Asset Tracking :** This feature aims to show the path traveled by each assetId over the course of a year. For this we have used Google Maps and Bokeh geomaps to view the position of each assetId on a particular day. A future development of this could include a geofencing application and alerting for a particular assetId if it goes out of its confined area.
+1. **Asset Tracking :** This feature aims to show the path traveled by each assetId over the course of a year. For this we have used Google Maps and Bokeh GMap to view the position of each assetId on a particular day. A future development of this could include a geofencing application and alerting for a particular assetId if it goes out of its confined area.
 2. **Fuel Refill Prediction** : This feature analyses the past data and calculates the refill dates of each assetId based on the fuel level percentage. Further it predicts the future refill dates based on the past trend and usage. 
 3. **Best Performing Asset** : This feature aims to rank each assetId per asset type based on its fuel consumption and total hours it worked for. This is just a indicator chart to inform product managers which asset needs maintenance or is performing poorly.
 
@@ -45,14 +50,15 @@ python main.py
 **Best Assets :** 
 ![plot](./Screenshots/BestAsset.jpeg)
 
-**Asset Tracking :**
 
+**Asset Tracking :**
+This shows the path traveled by assetID : 1022011 of asset Type : Motor Grader.
+![plot](./Screenshots/assetTracking.jpeg)
 
 **Fuel History :**
 <br>
 This is a fuel history dates chart for Excavator Asset Type, ID : 1022017
 ![plot](./Screenshots/FuelHistory.png)
-
 
 
 
