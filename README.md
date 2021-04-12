@@ -12,9 +12,11 @@ The challenge is described in pdf : Caterpillar Challenge HackIllinois.
 
 ## Team 
 
-Anagh Seshagiri Sharma (Github: anagh0sharma) <br>
-Anisha Jauhari (Github: anisha1095) <br>
 Nikhil Shenoy (Github: nshenoy3) <br>
+Anisha Jauhari (Github: anisha1095) <br>
+Anagh Seshagiri Sharma (Github: anagh0sharma) <br>
+
+
 
 ## Installation
 
